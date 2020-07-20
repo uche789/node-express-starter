@@ -17,9 +17,9 @@ app.get('/', (req, res) => {
 router.get('/verify', function (req, res, next) {
   const code = req.query['code'];
   if (code === 'abc' || code === '123') {
-    res.status(200).send('Code is valid');
+    res.status(200).send({ msg: 'Code is valid' });
   } else {
-    res.status(404).send('Code is invalid');
+    res.status(404).json({ msg: 'Invalid code' });
   }
 })
 
