@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const router = express.Router()
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // simple logger for this router's requests
 // all requests to this router will first hit this middleware
