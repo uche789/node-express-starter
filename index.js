@@ -14,8 +14,8 @@ app.get('/', (req, res) => {
   res.send('Hello');
 });
 
-router.get('/code/:code', function (req, res, next) {
-  const code = req.params.code;
+router.get('/verify', function (req, res, next) {
+  const code = req.query['code'];
   if (code === 'abc' || code === '123') {
     res.status(200).send('Code is valid');
   } else {
