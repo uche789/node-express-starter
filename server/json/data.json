@@ -1,0 +1,12 @@
+{
+  "application": {
+    "name": "Express and Vue Starter",
+    "description": "Use this repository to get started on building your Express and Vue application",
+    "packages": [
+      "Node.js",
+      "Express",
+      "SqLite3",
+      "Vue"
+    ]
+  }
+}
