@@ -1,5 +1,7 @@
-const appTempData = require('../json/data.json');
+const appData = require('../services/application');
 
 module.exports = (req, res, next) => {
-  res.json(appTempData);
+  appData.fetch().then(data => {
+    res.json(data);
+  });
 }

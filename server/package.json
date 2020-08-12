@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "develop": "nodemon index.js develop",
-    "start": "node index.js"
+    "start": "node index.js",
+    "migration": "node ./database/migration.js"
   },
   "author": "",
   "license": "ISC",
