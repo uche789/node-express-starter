@@ -15,12 +15,18 @@ export default {
   props: {
     msg: String
   },
+  computed: {
+    appData() {
+      return this.$store.state.application.data;
+    }
+  },
+  watch: {
+    appData() {
+      console.log(this.appData);
+    }
+  },
   mounted() {
-    fetch('http://localhost:3000/application').then((response) => {
-      response.json().then(function(data) {
-        console.log(data);
-      });
-    });
+    this.$store.dispatch('application/fetch');
   }
 }
 </script>
