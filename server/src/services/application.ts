@@ -1,10 +1,12 @@
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./database/data.db');
+import sqlite3 from 'sqlite3';
+const db = new (sqlite3.verbose()).Database('./database/data.db');
 
 const appData = {
   fetch() {
     return new Promise((resolve, reject) => {
-      db.all('SELECT * from application', [], (err, rows) => {
+      const sql = 'SELECT * from application';
+
+      db.all(sql, [], (err, rows) => {
         if (err) {
           console.log('Error running sql: ' + sql)
           console.log(err)
@@ -21,6 +23,6 @@ const appData = {
       })
     })
   }
-} 
+}
 
-module.exports = appData;
+export default appData;
